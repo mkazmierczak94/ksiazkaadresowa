@@ -109,23 +109,30 @@ void wyszukajPoImieniu(vector<Kontakt>adresaci) {
     string imie;
     cout << "Podaj imie po ktorym chcesz wyszukiwac: ";
     cin >> imie;
+    int licznik=0;
 
     for(vector<Kontakt>::iterator itr=adresaci.begin(); itr!=adresaci.end(); ++itr) {
         if((*itr).imie==imie) {
             cout << "Znaleziono kontakt: " << endl;
             cout << (*itr).imie << " " << (*itr).nazwisko << " " <<(*itr).nr_telefonu;
             cout << " " << (*itr).adres << " " << (*itr).email << endl;
-            cout << "Nacisnij dowolny klawisz aby kontynuowac" << endl;
-            getch();
-            return;
+            licznik++;
 
         }
-
     }
-    cout << "Nie ma osoby o takim imieniu";
-    Sleep(1000);
-    return;
+    if(licznik>0) {
 
+
+        cout << "Nacisnij dowolny klawisz aby kontynuowac" << endl;
+        getch();
+        return;
+    } else {
+
+
+        cout << "Nie ma osoby o takim imieniu";
+        Sleep(2000);
+        return;
+    }
 }
 
 void wyszukajPoNazwisku(vector<Kontakt>adresaci) {
@@ -133,23 +140,30 @@ void wyszukajPoNazwisku(vector<Kontakt>adresaci) {
     string nazwisko;
     cout << "Podaj nazwisko po ktorym chcesz wyszukiwac: ";
     cin >> nazwisko;
+    int licznik=0;
 
     for(vector<Kontakt>::iterator itr=adresaci.begin(); itr!=adresaci.end(); ++itr) {
         if((*itr).nazwisko==nazwisko) {
             cout << "Znaleziono kontakt: " << endl;
             cout << (*itr).imie << " " << (*itr).nazwisko << " " <<(*itr).nr_telefonu;
             cout << " " << (*itr).adres << " " << (*itr).email << endl;
-            cout << "Nacisnij dowolny klawisz aby kontynuowac" << endl;
-            getch();
-            return;
-
+            licznik++;
         }
 
     }
-    cout << "Nie ma osoby o takim nazwisku";
-    Sleep(1000);
-    return;
+    if(licznik>0) {
 
+
+        cout << "Nacisnij dowolny klawisz aby kontynuowac" << endl;
+        getch();
+        return;
+    } else {
+
+
+        cout << "Nie ma osoby o takim nazwisku";
+        Sleep(2000);
+        return;
+    }
 }
 
 void wyswietlWszystkieKontakty(vector<Kontakt>adresaci) {
